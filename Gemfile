@@ -12,6 +12,9 @@ group :production do
     gem 'rails_12factor'
 end
 
+# Use Slim for templates
+# gem 'slim'
+gem 'slim-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use bootstrap library for styles
