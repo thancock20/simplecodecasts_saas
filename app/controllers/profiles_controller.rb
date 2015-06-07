@@ -8,6 +8,12 @@ class ProfilesController < ApplicationController
   def create
     @user = User.find( params[:user_id] )
     @profile = @user.build_profile(profile_params)
+    if @profile.save
+      flash[:success] = "Profile Updated!"
+      redirect_to user_path( params[:user_id] )
+    else
+      render action: :new
+    end
   end
 
   private
