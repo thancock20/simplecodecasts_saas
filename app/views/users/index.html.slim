@@ -1,0 +1,15 @@
+.row
+  .col-md-8.col-md-offset-2
+    ul.list-unstyled
+      - @users.each do |user|
+        - if user.profile
+          li
+            <div class="well row #{cycle('white-bg', '')}">
+              .col-sm-4.text-center
+                - if user.profile.avatar
+                  = link_to user do
+                    = image_tag user.profile.avatar.url(:thumb), class: 'user-index-avatar'
+              = link_to user do
+                h2 #{user.profile.first_name} #{user.profile.last_name}
+              p = user.profile.job_title
+            </div>
